@@ -77,10 +77,6 @@ def save_landmarks(filename, action_name, pose, face, hands):
             with open('pose_images.csv', mode='a', newline='') as f:
                 csv_writer = csv.writer(f, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
                 csv_writer.writerow(extract_landmarks(results, action_name, pose, face, hands))
-
-            cv2.imshow('video', image)
-            if cv2.waitKey(10) & 0xFF == ord('q'):
-                break
     cap.release()
     cv2.destroyAllWindows()
 

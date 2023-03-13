@@ -25,7 +25,7 @@ videos = UploadSet('videos', extensions=('mp4', 'mov', 'avi'))
 configure_uploads(app, videos)
 
 
-class Video_data(dataBase.Model):
+class Video_Data(dataBase.Model):
     id = dataBase.Column(dataBase.Integer, primary_key=True)
     action = dataBase.Column(dataBase.String(100), nullable=False)
     context = dataBase.Column(dataBase.String(255), nullable=False)
@@ -43,7 +43,7 @@ with app.app_context():
 
 @app.route('/display-data', methods=['GET'])
 def get_data():
-    data = Video_data.query.all()
+    data = Video_Data.query.all()
     allRows = []
     for row in data:
         allRows.append({
@@ -61,7 +61,7 @@ def get_data():
 
 
 @app.route('/upload-data', methods=['POST'])
-def getVideo():
+def get_video():
     _video_file = request.files['video']
     _action = request.form['action']
     pose = get_pose(_action)
@@ -75,19 +75,19 @@ def getVideo():
 
 
 def get_pose(_action):
-    pose_tuple = Video_data.query.filter_by(action=_action).with_entities(Video_data.pose).first()
+    pose_tuple = Video_Data.query.filter_by(action=_action).with_entities(Video_Data.pose).first()
     pose_bool = pose_tuple[0]
     return pose_bool
 
 
 def get_face(_action):
-    face_tuple = Video_data.query.filter_by(action=_action).with_entities(Video_data.face).first()
+    face_tuple = Video_Data.query.filter_by(action=_action).with_entities(Video_Data.face).first()
     face_bool = face_tuple[0]
     return face_bool
 
 
 def get_hand(_action):
-    hand_tuple = Video_data.query.filter_by(action=_action).with_entities(Video_data.hand).first()
+    hand_tuple = Video_Data.query.filter_by(action=_action).with_entities(Video_Data.hand).first()
     hand_bool = hand_tuple[0]
     return hand_bool
 
