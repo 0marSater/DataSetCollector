@@ -120,7 +120,7 @@ export default function MovmentChoice() {
               <label className="form-label font18" htmlFor="formFile">Add your video here &nbsp;</label>
               <input type="file" className="form-control shadow" name="video" onChange={handleChange} enctype="multipart/form-data"/>
             </div>
-            <button type="submit" className="btn mt-4 btn-block btn-outline-dark p-2 shadow" onClick={handleSubmit}><b>Send you video</b></button>
+            <button type="submit" className="btn mt-4 btn-block btn-outline-dark p-2 shadow" onClick={handleSubmit}><b>Send your video</b></button>
             {error && <p className="lead mt-1 text-danger">{error}</p>}
           </form>
         </div>
