@@ -1,0 +1,8 @@
+#all files that are not required in our project.
+Dockerfile
+.dockerignore
+.gitignore
+pose_images
+
+#Artifacts that will be built during image creation
+venv

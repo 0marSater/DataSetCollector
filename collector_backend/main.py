@@ -38,7 +38,7 @@ class VideoData(dataBase.Model):
 
 with app.app_context():
     dataBase.create_all()
-    #dataBase.drop_all()
+    # dataBase.drop_all()
 
 
 @app.route('/display-data', methods=['GET'])
@@ -93,4 +93,6 @@ def get_hand(_action):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # in case of overriding the internal default port 5000
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True, port=port, host='0.0.0.0')
