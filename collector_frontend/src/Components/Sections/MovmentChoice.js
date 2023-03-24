@@ -58,7 +58,7 @@ export default function MovmentChoice() {
       formData2.append('id', actionId);
 
 
-      fetch('http://54.238.225.3:5000//upload-data', {method: "POST",
+      fetch('http://www.dataset-collector.online:5000//upload-data', {method: "POST",
      
       body:formData2})
 
@@ -74,7 +74,7 @@ export default function MovmentChoice() {
   // on page load send movments get request
   useEffect(() => 
     async function fetchData(){
-      fetch('http://54.238.225.3:5000//display-data')
+      fetch('http://www.dataset-collector.online:5000//display-data')
       .then(response => response.json())
       .then(res => {
         setMovments(res.Data.response_data)
