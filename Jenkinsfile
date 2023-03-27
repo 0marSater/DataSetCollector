@@ -14,27 +14,15 @@ pipeline {
     stage("init"){
       steps{
         script{
-          sh "cd /var/jenkins_home/workspace/my-frist-pipline/collector_frontend"
-          gv = load "frontScripts.groovy"
-          sh "cd /var/jenkins_home/workspace/my-frist-pipline/collector_backend"
-          gv = load "backScripts.groovy"
-          sh "cd /var/jenkins_home/workspace/my-frist-pipline/"
+          def script = load "script.groovy"
         }
       }
     }
 
-    stage("build react-frontend docker image") {
+    stage("build") {
       steps {
         script{
-          gv.buildDockerImage()
-        }
-      }
-    }
-    
-    stage("build flask-backend docker image") {  
-      steps {
-        script{
-          gv.buildDockerImage()
+         script.build()
         }
       }
     }
