@@ -9,21 +9,9 @@ pipeline {
   //   choice(name: 'VERSION', choices:[ '1.1.0','1.1.1'], description:'version of app')
   //   booleanParam(name:'excuteTests', defaultValue: true, description:'')
   // }
-  def backendScript
-  def frontendScript
+  def backendScript = load "backEndScript.groovy"
+  def frontendScript = load "frontEndScript.groovy"
   stages {
-    stage("init"){
-      steps{
-        
-        sh "cd /var/jenkins_home/workspace/Collector-pipeline/collector_frontend"
-        def frontendScript = load "frontEndScript.groovy"
-
-        sh "cd /var/jenkins_home/workspace/Collector-pipeline/collector_backend"
-        def backendScript = load "backEndScript.groovy"
-        
-      }
-    }
-
     stage("build docker image for the backend") {
       steps {
         script{
