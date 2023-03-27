@@ -9,7 +9,8 @@ pipeline {
   //   choice(name: 'VERSION', choices:[ '1.1.0','1.1.1'], description:'version of app')
   //   booleanParam(name:'excuteTests', defaultValue: true, description:'')
   // }
-
+  def backendScript
+  def frontendScript
   stages {
     stage("init"){
       steps{
