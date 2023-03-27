@@ -14,15 +14,23 @@ pipeline {
     stage("init"){
       steps{
         script{
-          def script = load "script.groovy"
+          def frontendScript = load "frontScript.groovy"
+          def backendScript = load "backScript.groovy"
         }
       }
     }
 
-    stage("build") {
+    stage("build docker image for the backend") {
       steps {
         script{
-         script.build()
+         backendScript.buildBackEndImage()
+        }
+      }
+    }
+      stage("build docker image for the frontend") {
+      steps {
+        script{
+         frontendScript.buildFrontEndImage()
         }
       }
     }
