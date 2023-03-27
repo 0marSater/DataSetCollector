@@ -18,6 +18,7 @@ pipeline {
           gv = load "frontScripts.groovy"
           sh "cd /var/jenkins_home/workspace/my-frist-pipline/collector_backend"
           gv = load "backScripts.groovy"
+          sh "cd /var/jenkins_home/workspace/my-frist-pipline/"
         }
       }
     }
