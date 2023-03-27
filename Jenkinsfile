@@ -13,13 +13,13 @@ pipeline {
   stages {
     stage("init"){
       steps{
-        script{
-          sh "cd /var/jenkins_home/workspace/Collector-pipeline/collector_frontend"
-          def frontendScript = load "frontEndScript.groovy"
+        
+        sh "cd /var/jenkins_home/workspace/Collector-pipeline/collector_frontend"
+        def frontendScript = load "frontEndScript.groovy"
 
-          sh "cd /var/jenkins_home/workspace/Collector-pipeline/collector_backend"
-          def backendScript = load "backEndScript.groovy"
-        }
+        sh "cd /var/jenkins_home/workspace/Collector-pipeline/collector_backend"
+        def backendScript = load "backEndScript.groovy"
+        
       }
     }
 
