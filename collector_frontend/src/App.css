@@ -1,10 +1,30 @@
-.font20{
-    font-size: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@1,500&family=Heebo&family=Kalam:wght@300&family=Kanit:ital,wght@1,300&display=swap%27');
+
+.kalam{
+    font-family: 'Kalam', cursive;
+}
+
+
+.border {
+    border-width: 500px;
+    border-style: solid;
+    border-color: #000000;
+    border-radius: '50px';
+    overflow: 'hidden' ;
+  }
+  
+.videoSize{
+    min-height: 25vh;
+    min-width: 25vw;
+    max-height: 100vh;
+    border-radius: '50px';
 
 }
 
-.textHeight{
-    line-height: 2;
+.subheader{
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 350;
 }
 
 .font16{
@@ -15,7 +35,66 @@
     font-size: 18;
 }
 
-.font26{
-    font-size: 30px;
-    font-weight: 600;   
+.header{
+    font-size: 50px;
+    line-height: 41px;
+    font-weight: 400;
+}
+
+.actionheader{
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.actionattributes {
+    font-size: 20px;
+    line-height: 32px;
+}
+
+.width80{
+    width: 80%;
+}
+
+.radius{
+    border-radius: 10px;
+}
+
+.buttoncolors{
+    width: 100%;
+    color: white;
+    background-color: #202020;
+}
+
+.buttoncolors:hover{
+    color: #202020;
+    background-color: rgb(245, 245, 245);
+    border: 3px solid #202020;
+}
+
+.alighncenterall {align-items: center;}
+
+
+.MainHeaderText {
+    line-height: 1.1;
+}
+
+@media (max-width: 640px) {
+    
+    .header{
+        font-size: 48px;
+        line-height: 41px;
+        font-weight: 200;
+        text-align: center;
+    }
+
+    .subheader{
+        font-size: 24px;
+        line-height: 32px;
+        text-align: center;
+    }
+
+    .alighncenter{
+        align-items: center;
+    }
+
 }

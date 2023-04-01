@@ -1,21 +1,16 @@
 import './App.css';
-
+import NavBar from './Components/Sections/NavBar/NavBar';
 import Introduction from './Components/Sections/Introduction';
-import MovmentChoice from './Components/Sections/MovmentChoice';
+import MovmentChoice from './Components/Sections/MovmentChoice/MovmentChoice'
+import Footer from './Components/Sections/Footer/Footer';
 
 function App() {
-  const style = {
-    background: `linear-gradient(rgba(91, 143, 185, 0.5), rgba(182, 234, 218, 0.5)) , url(${process.env.PUBLIC_URL}/Bimg.jpg) `,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-
-  }
   return (
-    <div className="App" style={style}>
-      <div className="mx-1 py-3">
-      <Introduction/>
-      <MovmentChoice/>
-      </div>
+    <div className="App">
+      <NavBar />
+      <Introduction />
+      <MovmentChoice />
+      <Footer />
     </div>
   );
 }

@@ -1,0 +1,12 @@
+.NavBar{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Fasthand', cursive;
+    padding: 0px;
+  
+}
+
+.NavBar .MainText{
+    font-family: 'Fasthand', cursive;
+    font-size: calc(.75vw + 1vh + 1vmin);
+
+}

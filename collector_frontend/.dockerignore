@@ -5,3 +5,6 @@ Dockerfile
 
 #Artifacts that will be built during image creation
 node_modules
+
+#specific files
+src.rar
