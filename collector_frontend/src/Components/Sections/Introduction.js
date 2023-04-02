@@ -44,7 +44,7 @@ function Introduction() {
 
           <Fade right>
             <div className="embed-responsive embed-responsive-16by9 shadow" style={{ borderRadius: '20px', overflow: 'hidden' }}>
-              <video src={'https://assets-static.invideo.io/files/Invideo_AI_Teaser_E_eb2e97e70d.mp4'} ref={videoRef} className="embed-responsive-item" type="video/mp4" onClick={handleVideoClick} autoPlay loop muted > Your browser does not support HTML5 video. </video>
+              <video src={process.env.PUBLIC_URL + '/Introduction.mp4'} ref={videoRef} className="embed-responsive-item" type="video/mp4" onClick={handleVideoClick} autoPlay loop muted > Your browser does not support HTML5 video. </video>
             </div>
           </Fade>
 
