@@ -5,6 +5,7 @@ import {
 } from 'react';
 
 import Fade from 'react-reveal/Fade';
+import ImageSrc from './favicon.ico';
 
 function Introduction() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -13,7 +14,7 @@ function Introduction() {
   const handleVideoClick = () => {
     const videoElement = videoRef.current;
     if (videoElement.muted) {
-    videoElement.muted = false;
+      videoElement.muted = false;
     }
     else if (videoElement.paused) {
       videoElement.play();
@@ -35,7 +36,7 @@ function Introduction() {
               <h4 className="display-6 header MainHeaderText mb-2 mr-lg-3">THE FUTURE OF AI</h4>
               <p className="mb-0 subheader text-muted mr-lg-3">Help Us With Growing Our Database To Create Body Language AI Detector</p>
               <div class="col-sm-12 col-md-6">
-              <a href='#VideoUploadSection' className="btn mt-4 buttoncolors py-3 px-5 shadow radius "><b>Get Started Now</b></a>
+                <a href='#VideoUploadSection' className="btn mt-4 buttoncolors py-3 px-5 shadow radius "><b>Get Started Now</b></a>
               </div>
             </Fade>
           </div>
@@ -43,16 +44,16 @@ function Introduction() {
         <div className="col-lg-7 p-3 d-flex flex-column justify-content-center">
 
           <Fade right>
-            <div className="embed-responsive embed-responsive-16by9 shadow" style={{ borderRadius: '20px', overflow: 'hidden' }}>
-              <video src={process.env.PUBLIC_URL + '/Introduction.mp4'} ref={videoRef} className="embed-responsive-item" type="video/mp4" onClick={handleVideoClick} autoPlay loop muted > Your browser does not support HTML5 video. </video>
+              <div className="image-container">
+                <img src={ImageSrc} alt="Main Image" />
             </div>
           </Fade>
 
         </div>
       </div>
       <div className='row'>
-      <h4 className=' my-3 mb-5 text-muted mx-auto subheader'></h4>
-        </div>
+        <h4 className=' my-3 mb-5 text-muted mx-auto subheader'></h4>
+      </div>
     </div>
   )
 }

@@ -40,7 +40,7 @@ def save_landmarks(filename, action_name, pose, face, hands):
 
             # Make Detections
             results = holistic.process(image)
-            if not os.path.isfile('pose_images.csv'):
+            if not os.path.isfile('./pose_images.csv'):
                 create_landmarks_cords()
 
             # make image writeable again
@@ -74,7 +74,7 @@ def save_landmarks(filename, action_name, pose, face, hands):
                                       mp_drawing.DrawingSpec(color=(245, 66, 230), thickness=2, circle_radius=2)
                                       )
             # Export to CSV
-            with open('pose_images.csv', mode='a', newline='') as f:
+            with open('./pose_images.csv', mode='a', newline='') as f:
                 csv_writer = csv.writer(f, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
                 csv_writer.writerow(extract_landmarks(results, action_name, pose, face, hands))
     cap.release()
