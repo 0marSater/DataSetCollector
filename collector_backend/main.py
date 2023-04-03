@@ -29,7 +29,8 @@ class VideoData(dataBase.Model):
     id = dataBase.Column(dataBase.Integer, primary_key=True)
     action = dataBase.Column(dataBase.String(100), nullable=False)
     context = dataBase.Column(dataBase.String(255), nullable=False)
-    meaning = dataBase.Column(dataBase.String(255), nullable=True)
+    meaning_front = dataBase.Column(dataBase.String(255), nullable=True)
+    meaning_ai = dataBase.Column(dataBase.String(255), nullable=True)
     pose = dataBase.Column(dataBase.Boolean, nullable=True)
     face = dataBase.Column(dataBase.Boolean, nullable=True)
     hand = dataBase.Column(dataBase.Boolean, nullable=True)
@@ -38,7 +39,7 @@ class VideoData(dataBase.Model):
 
 with app.app_context():
     dataBase.create_all()
-    # dataBase.drop_all()
+    #dataBase.drop_all()
 
 
 @app.route('/display-data', methods=['GET'])
@@ -50,7 +51,7 @@ def get_data():
             'id': row.id,
             'action': row.action,
             'context': row.context,
-            'meaning': row.meaning,
+            'meaning': row.meaning_front,
             'video': row.video
         })
     return jsonify({
