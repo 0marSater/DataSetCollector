@@ -35,7 +35,7 @@ function Introduction() {
               <h4 className="display-6 header MainHeaderText mb-2 mr-lg-3">THE FUTURE OF AI</h4>
               <p className="mb-0 subheader text-muted mr-lg-3">Help Us With Growing Our Database To Create Body Language AI Detector</p>
               <div class="col-sm-12 col-md-6">
-              <button className="btn mt-4 buttoncolors py-3 px-5 shadow radius "><b>Get Started Now</b></button>
+              <a href='#VideoUploadSection' className="btn mt-4 buttoncolors py-3 px-5 shadow radius "><b>Get Started Now</b></a>
               </div>
             </Fade>
           </div>

@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from flask_uploads import UploadSet, configure_uploads
+
 from AI import *
 
 app = Flask(__name__)
@@ -12,7 +13,6 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'dataBase.sqlite')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['UPLOADED_VIDEOS_DEST'] = 'videos\\'
-app.config['VIDEO_WITH_LANDMARKS'] = 'VideWithLandMarks\\'
 
 app.config['MAX_CONTENT_LENGTH'] = 100 * 1024 * 1024
 
@@ -64,13 +64,12 @@ def get_data():
 def get_video():
     _video_file = request.files['video']
     _action = request.form['action']
-    pose = get_pose(_action)
-    face = get_face(_action)
-    hand = get_hand(_action)
+    _pose = get_pose(_action)
+    _face = get_face(_action)
+    _hand = get_hand(_action)
     file_name = videos.save(_video_file)
-    full_path = basedir + '\\' + app.config['UPLOADED_VIDEOS_DEST'] + file_name
-    # full_path_2 = basedir + '\\' + app.config['VIDEO_WITH_LANDMARKS']
-    save_landmarks(full_path, _action, pose, face, hand)
+    _full_path = basedir + '\\' + app.config['UPLOADED_VIDEOS_DEST'] + file_name
+    save_landmarks(_full_path, _action, _pose, _face, _hand)
     return "ok"
 
 
