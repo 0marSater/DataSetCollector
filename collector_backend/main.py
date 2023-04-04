@@ -39,7 +39,7 @@ class VideoData(dataBase.Model):
 
 with app.app_context():
     dataBase.create_all()
-    #dataBase.drop_all()
+    # dataBase.drop_all()
 
 
 @app.route('/display-data', methods=['GET'])
@@ -65,10 +65,13 @@ def get_data():
 def get_video():
     _video_file = request.files['video']
     _action = request.form['action']
+    # assign name of action to be a name of the folder
+    directory_name = _action
     _pose = get_pose(_action)
     _face = get_face(_action)
     _hand = get_hand(_action)
-    file_name = videos.save(_video_file)
+    # folder parameter is for check if folder path(action folder) exist or not, if isn't then create
+    file_name = videos.save(_video_file, folder=directory_name)
     _full_path = basedir + '\\' + app.config['UPLOADED_VIDEOS_DEST'] + file_name
     save_landmarks(_full_path, _action, _pose, _face, _hand)
     return "ok"
