@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   frontend:
-    image: omarsater/private-repo:react-v1.1.2
+    image: omarsater/private-repo:react-v1.1.4
     environment:
       NODE_ENV: production
     ports:
@@ -9,21 +9,21 @@ services:
     networks:
       - my-network
     volumes:
-      - _data2:/app
+      - front_data:/app
     depends_on:
       - backend
   backend:
-    image: omarsater/private-repo:flask-v1.0.0
+    image: omarsater/private-repo:flask-v1.1.4
     ports:
       - "5000:5000"
     networks:
       - my-network
     volumes:
-      - _data:/app
+      - back_data:/app
 
 networks:
   my-network:
     driver: bridge
 volumes:
-  _data:
-  _data2:
+  front_data:
+  back_data:
