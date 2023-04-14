@@ -66,7 +66,7 @@ export default function MovmentChoice() {
 
       setUploadMsg("Please Hold On while Uploading The Video")
       setSubmitButDisable(true)
-      const response = await fetch('http://www.dataset-collector.online:5000//upload-data', {
+      const response = await fetch('http://127.0.0.1:5000//upload-data', {
         method: "POST",
         body: formData2
       })
@@ -101,7 +101,7 @@ export default function MovmentChoice() {
   useEffect(() =>
 
     async function fetchData() {
-      fetch('http://www.dataset-collector.online:5000//display-data')
+      fetch('http://127.0.0.1:5000//display-data')
         .then(response => response.json())
         .then(res => {
           setMovments(res.Data.response_data)

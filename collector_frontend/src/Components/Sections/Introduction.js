@@ -61,4 +61,3 @@ function Introduction() {
 export default Introduction
 
 
-// Help us improve our nonverbal actions machine learning model by providing <b>a 10 seconds duration videos</b> that demonstrate different nonverbal actions that you can choose from. Your contributions can make a difference in building a more empathetic and understanding world. We take your privacy seriously and assure you that your personal information and videos will not be even stored .<b>Be assured assured that all contributors will remain anonymous to protect your privacy</b>. Join us in building a better world through nonverbal communication.
