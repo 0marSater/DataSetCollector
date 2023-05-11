@@ -6,7 +6,6 @@ pipeline {
     DOCKER_REPO = "omarsater/private-repo"
 
    }
-
     stages {
         stage('Clone repository') {
             steps {
@@ -17,22 +16,26 @@ pipeline {
         }
         stage("Build both image") {
             steps{
-                script{
-                    // loading external build.groovy script
-                    def file= load "build.groovy"
-                    file.buildFrontImage()
-                    file.buildBackImage()
+                dir('jenkins'){
+                    script{
+                        // loading external build.groovy script
+                        def file= load "build.groovy"
+                        file.buildFrontImage()
+                        file.buildBackImage()
+                    }
                 }
             }
-        }
+         }
 
         stage("Push to Dockerhub") {
             steps{
-                script{
-                    // loading external push.groovy script
-                    def file = load "push.groovy"
-                    file.pushImage()
-                }
+                dir('jenkins'){
+                    script{
+                        // loading external push.groovy script
+                        def file = load "push.groovy"
+                        file.pushImage()
+                    }
+                }          
             }
         }
     }
