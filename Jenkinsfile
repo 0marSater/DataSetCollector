@@ -16,26 +16,22 @@ pipeline {
         }
         stage("Build both image") {
             steps{
-                dir('jenkins'){
-                    script{
-                        // loading external build.groovy script
-                        def file= load "build.groovy"
-                        file.buildFrontImage()
-                        file.buildBackImage()
-                    }
+                script{
+                    // loading external build.groovy script
+                    def file= load "build.groovy"
+                    file.buildFrontImage()
+                    file.buildBackImage()
                 }
             }
          }
 
         stage("Push to Dockerhub") {
             steps{
-                dir('jenkins'){
-                    script{
-                        // loading external push.groovy script
-                        def file = load "push.groovy"
-                        file.pushImage()
-                    }
-                }          
+                script{
+                    // loading external push.groovy script
+                    def file = load "push.groovy"
+                    file.pushImage()
+                }       
             }
         }
     }
