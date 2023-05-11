@@ -31,7 +31,19 @@ pipeline {
                     // loading external push.groovy script
                     def file = load "push.groovy"
                     file.pushImage()
-                }       
+                }
+       
+            }
+        }
+        stage("Deploy to EC2") {
+            steps{
+                script{
+                    // deploying the app on ec2 instance using docker-compose 
+                    def cmd  = "docker-compose -f docker-compose.yaml up"
+                    sshagent(['ec2 connection']) {
+                        sh "ssh -o StrictHostKeyChecking=no ec2-user@13.37.207.20 ${cmd} "
+                    }
+                }
             }
         }
     }
