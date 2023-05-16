@@ -154,3 +154,4 @@ cython_debug/
 .csv
 *.mp4
 collector_backend/pose_images.csv
+k8s
