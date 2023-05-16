@@ -1,8 +1,8 @@
 pipeline {
   agent any
    environment{
-    FRONTEND_IMAGE_TAG = "react-v1.1.9"
-    BACKEND_IMAGE_TAG = "flask-v1.1.9"
+    FRONTEND_IMAGE_TAG = "react-v1.1.1"
+    BACKEND_IMAGE_TAG = "flask-v1.1.1"
     DOCKER_REPO = "omarsater/private-repo"
 
    }
@@ -39,10 +39,7 @@ pipeline {
             steps{
                 script{
                     // deploying the app on ec2 instance using docker-compose 
-                    def cmd  = "docker-compose -f docker-compose.yaml up"
-                    sshagent(['ec2 connection']) {
-                        sh "ssh -o StrictHostKeyChecking=no ec2-user@13.37.207.20 ${cmd} "
-                    }
+                    sh "docker-compose -f docker-compose.yaml up"
                 }
             }
         }
