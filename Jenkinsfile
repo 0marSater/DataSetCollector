@@ -35,7 +35,7 @@ pipeline {
        
             }
         }
-        stage("Deploy to EC2") {
+        stage("Deploy on EC2") {
             steps{
                 script{
                     // deploying the app on ec2 instance using docker-compose 
