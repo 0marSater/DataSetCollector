@@ -14,16 +14,16 @@ pipeline {
                 }
             }
         }
-        // stage("Build both image") {
-        //     steps{
-        //         script{
-        //             // loading external build.groovy script
-        //             def file= load "build.groovy"
-        //             file.buildFrontImage()
-        //             file.buildBackImage()
-        //         }
-        //     }
-        //  }
+        stage("Build both image") {
+            steps{
+                script{
+                    // loading external build.groovy script
+                    def file= load "build.groovy"
+                    file.buildFrontImage()
+                    file.buildBackImage()
+                }
+            }
+         }
 
         stage("Push to Dockerhub") {
             steps{
