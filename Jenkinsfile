@@ -19,7 +19,7 @@ pipeline {
                 script{
                     // loading external build.groovy script
                     def file= load "build.groovy"
-                    // file.buildFrontImage()
+                    file.buildFrontImage()
                     file.buildBackImage()
                 }
             }
