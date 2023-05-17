@@ -14,16 +14,16 @@ pipeline {
                 }
             }
         }
-        stage("Build both image") {
-            steps{
-                script{
-                    // loading external build.groovy script
-                    def file= load "build.groovy"
-                    file.buildFrontImage()
-                    file.buildBackImage()
-                }
-            }
-         }
+        // stage("Build both image") {
+        //     steps{
+        //         script{
+        //             // loading external build.groovy script
+        //             def file= load "build.groovy"
+        //             file.buildFrontImage()
+        //             file.buildBackImage()
+        //         }
+        //     }
+        //  }
 
         // stage("Push to Dockerhub") {
         //     steps{
@@ -39,7 +39,7 @@ pipeline {
             steps{
                 script{
                     // deploying the app on ec2 instance using docker-compose 
-                    sh "cd /home/ec2-user/DataSetCollector && docker-compose -f docker-compose.yaml up"
+                    sh "cd cd ${WORKSPACE} && docker-compose -f docker-compose.yaml up"
                 }
             }
         }
