@@ -1,7 +1,7 @@
-def buildFrontImage() {
-    echo "Start building frontend image ... "
-    sh "cd ${WORKSPACE}/collector_frontend && docker build -t $FRONTEND_IMAGE_TAG ."
-}
+// def buildFrontImage() {
+//     echo "Start building frontend image ... "
+//     sh "cd ${WORKSPACE}/collector_frontend && docker build -t $FRONTEND_IMAGE_TAG ."
+// }
 
 def buildBackImage() {
     echo "Start building backend image ... "

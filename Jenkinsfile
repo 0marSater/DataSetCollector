@@ -19,29 +19,29 @@ pipeline {
                 script{
                     // loading external build.groovy script
                     def file= load "build.groovy"
-                    file.buildFrontImage()
+                    // file.buildFrontImage()
                     file.buildBackImage()
                 }
             }
          }
 
-        stage("Push to Dockerhub") {
-            steps{
-                script{
-                    // loading external push.groovy script
-                    def file = load "push.groovy"
-                    file.pushImage()
-                }
+        // stage("Push to Dockerhub") {
+        //     steps{
+        //         script{
+        //             // loading external push.groovy script
+        //             def file = load "push.groovy"
+        //             file.pushImage()
+        //         }
        
-            }
-        }
-        stage("Deploy to EC2") {
-            steps{
-                script{
-                    // deploying the app on ec2 instance using docker-compose 
-                    sh "cd ${WORKSPACE} && docker-compose -f docker-compose.yaml up -d"
-                }
-            }
-        }
+        //     }
+        // }
+        // stage("Deploy to EC2") {
+        //     steps{
+        //         script{
+        //             // deploying the app on ec2 instance using docker-compose 
+        //             sh "cd ${WORKSPACE} && docker-compose -f docker-compose.yaml up -d"
+        //         }
+        //     }
+        // }
     }
 }
