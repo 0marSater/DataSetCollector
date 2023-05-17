@@ -39,7 +39,7 @@ pipeline {
             steps{
                 script{
                     // deploying the app on ec2 instance using docker-compose 
-                    sh "docker-compose -f docker-compose.yaml up"
+                    sh "cd /home/ec2-user/DataSetCollector && docker-compose -f docker-compose.yaml up"
                 }
             }
         }
