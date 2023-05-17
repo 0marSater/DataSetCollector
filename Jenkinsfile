@@ -25,16 +25,16 @@ pipeline {
         //     }
         //  }
 
-        // stage("Push to Dockerhub") {
-        //     steps{
-        //         script{
-        //             // loading external push.groovy script
-        //             def file = load "push.groovy"
-        //             file.pushImage()
-        //         }
+        stage("Push to Dockerhub") {
+            steps{
+                script{
+                    // loading external push.groovy script
+                    def file = load "push.groovy"
+                    file.pushImage()
+                }
        
-        //     }
-        // }
+            }
+        }
         stage("Deploy to EC2") {
             steps{
                 script{
