@@ -4,7 +4,7 @@
 
 This project contain `collector_backend` folder, inside it the source code and `Dokcerfile` for building its image, as long as the backend and other component.
 
-#Terraform folder
+Terraform folder
 -----------------
 `Terraform` folder contain some terraform files such as the root `main.tf`, `varaibles.tf`, `output.tf` and two `modules`.
 
