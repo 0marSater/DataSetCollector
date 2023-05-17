@@ -18,7 +18,7 @@ Jenkins pipeline
 `Jenkinsfile` contain four stages:
 - ___Clone repository___: this stages ensure changes that pushed are cloned to keep up to date the pipeline.
 - ___Build both image___: this tage contain 2 external groovy files, one for building frontend image commands, another for backend.
-- ___Push to dockerhub___: here we pushing images to private dockerhub to manage our images. Make sure u added ur credentails to Jnekins. 
+- ___Push to dockerhub___: here we pushing images to private dockerhub to manage our images. Make sure u added ur credentails on Jenkins. 
 - ___Deploy on EC2___: after provisioning AWS infrastructure, we deploy the two images on EC2 instance t2.medium type.
 
 
