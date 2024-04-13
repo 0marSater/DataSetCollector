@@ -20,6 +20,13 @@ Jenkins pipeline
 - ___Build both image___: this tage contain 2 external groovy files, one for building frontend image commands, another for backend.
 - ___Push to dockerhub___: here we pushing images to private dockerhub to manage our images. Make sure you added ur credentails on Jenkins. 
 - ___Deploy on EC2___: after provisioning AWS infrastructure, we deploy the two images on EC2 instance t2.medium type.
+---
+Demo
+----
+
+
+https://github.com/0marSater/DataSetCollector/assets/111258496/7daaf9dd-219c-43ac-a5ef-4bc1c6e61bca
+
 
 ___Finally, you can access it using www.dataset-collector.online___ 
 
